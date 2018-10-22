@@ -2,7 +2,9 @@
 
 using std::cout;
 using std::endl;
+using std::fixed;
 using std::rand;
+using std::setprecision;
 
 void Instructor::do_work() {
   int work = rand() % 9 + 1;
@@ -11,7 +13,20 @@ void Instructor::do_work() {
 
 
 void Instructor::printScore() {
-  cout << "Rating: " << getRating() << endl;
+  cout << fixed << setprecision(1) << "Rating: " << getRating() << endl;
+}
+
+void Instructor::randomizeRating() {
+
+  int whole = rand() % 6;
+  int decimal = rand() % 10;
+
+  if (whole == 5) {
+    setRating(5.0);
+  } else {
+    setRating(whole + decimal / 10.0);
+  }
+
 }
 
 
