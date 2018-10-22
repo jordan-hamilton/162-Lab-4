@@ -1,5 +1,6 @@
 #include "Person.hpp"
 
+using std::rand;
 using std::string;
 
 Person::Person() {
@@ -7,8 +8,8 @@ Person::Person() {
   setName("");
 }
 
-Person::Person(int personAge, std::string personName) {
-  setAge(personAge);
+Person::Person(std::string personName) {
+  randomizeAge();
   setName(personName);
 }
 
@@ -17,6 +18,10 @@ Person::~Person() {
 
 }
 
+
+void Person::randomizeAge() {
+  setAge(rand() % 93 + 18);
+}
 
 int Person::getAge() {
   return age;

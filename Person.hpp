@@ -13,10 +13,11 @@ class Person {
 
   public:
     Person();
-    Person(int personAge, std::string personName);
+    Person(std::string personName);
     virtual ~Person();
     virtual void do_work() = 0;
     virtual void printScore() = 0;
+    void randomizeAge();
     int getAge();
     std::string getName();
     void setAge(int personAge);
