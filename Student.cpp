@@ -2,7 +2,9 @@
 
 using std::cout;
 using std::endl;
+using std::fixed;
 using std::rand;
+using std::setprecision;
 
 void Student::do_work() {
   int work = rand() % 9 + 2;
@@ -11,7 +13,20 @@ void Student::do_work() {
 
 
 void Student::printScore() {
-  cout << "GPA: " << getGPA();
+  cout << fixed << setprecision(1) << "GPA: " << getGPA();
+}
+
+void Student::randomizeGPA() {
+
+  int whole = rand() % 5;
+  int decimal = rand() % 10;
+
+  if (whole == 4) {
+    setGPA(4.0);
+  } else {
+    setGPA(whole + decimal / 10.0);
+  }
+
 }
 
 
