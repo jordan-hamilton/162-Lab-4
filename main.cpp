@@ -16,7 +16,12 @@
 ** continues. If the player runs out of money or quits the game, the program ends.
 ***********************************************************************************************/
 
+#include <memory>
+
 #include "Menu.hpp"
+#include "Instructor.hpp"
+#include "Person.hpp"
+#include "Student.hpp"
 #include "University.hpp"
 
 /***********************************************************************************************
@@ -29,12 +34,34 @@ int main() {
 
   Menu mainMenu, peopleMenu;
 
-  mainMenu.addMenuItem("View building information");
-  mainMenu.addMenuItem("View students and faculty");
+  mainMenu.addMenuItem("View all buildings");
+  mainMenu.addMenuItem("View all students and faculty");
   mainMenu.addMenuItem("Select a person to do work");
   mainMenu.addMenuItem("Quit");
 
   University OSU("Oregon State University");
+
+  std::shared_ptr<Person> student1(new Student("John Appleseed"));
+  std::shared_ptr<Person> instructor1(new Instructor("Professor Professorson"));
+  std::shared_ptr<Building> building1(new Building("1201 5th St", "Admin Building", 700));
+  OSU.people.push_back(student1);
+  OSU.people.push_back(instructor1);
+  OSU.buildings.push_back(building1);
+
+  switch(mainMenu.getIntChoiceFromPrompt("Select a menu option:", 1, mainMenu.getMenuChoices(), true)) {
+
+    case 1 : OSU.printBuildingInfo();
+             break;
+    case 2 : OSU.printPeople();
+             break;
+    default : {}
+  }
+
+  /*
+  std::vector<std::unique_ptr<BaseClass> > base;
+  base.push_back( std_unique_ptr<BaseClass>(new FirstDerivedClass()) );
+  base.push_back( std_unique_ptr<BaseClass>(new SecondDerivedClass()) );
+  */
 
 
   return 0;
