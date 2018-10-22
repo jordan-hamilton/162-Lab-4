@@ -8,7 +8,7 @@ using std::setprecision;
 
 void Student::do_work() {
   int work = rand() % 9 + 2;
-  cout << this->getName() << "did " << work << "hours of homework." << endl;
+  cout << this->getName() << " did " << work << " hours of homework." << endl;
 }
 
 
