@@ -23,11 +23,11 @@ class University {
     void printPeople();
     std::string getName();
     void setName(std::string uniName);
+    std::vector<std::shared_ptr<Building>> buildings;
+    std::vector<std::shared_ptr<Person>> people;
 
   private:
     std::string name;
-    std::vector<std::unique_ptr<Building>> buildings;
-    std::vector<std::unique_ptr<Person>> people;
 
 };
 
