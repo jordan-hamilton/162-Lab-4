@@ -6,9 +6,9 @@ CXXFLAGS += -Wall
 CXXFLAGS += -pedantic-errors
 CXXFLAGS += -g
 
-OBJS = main.o Building.o Instructor.o Person.o Student.o University.o
-SRCS = main.cpp  Building.cpp Instructor.cpp Person.cpp Student.cpp University.cpp
-HEADERS = Building.cpp Instructor.cpp Person.cpp Student.cpp University.cpp
+OBJS = main.o Building.o Instructor.o Menu.o Person.o Student.o University.o
+SRCS = main.cpp  Building.cpp Instructor.cpp Menu.cpp Person.cpp Student.cpp University.cpp
+HEADERS = Building.cpp Instructor.cpp Menu.hpp Person.cpp Student.cpp University.cpp
 
 lab4: $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o lab4
