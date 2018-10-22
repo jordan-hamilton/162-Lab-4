@@ -2,18 +2,15 @@
 ** Program name: Lab 4
 ** Author: Jordan Hamilton
 ** Date: 10/21/2018
-** Description: This zoo tycoon game starts the player with a sum of money to purchase animals,
-** beginning with 1 or 2 penguins, tigers and turtles. The player's money is subtracted for each
-** purchased animal. Then, in a while loop, the animals in the zoo age by one day, are fed and
-** reduce the players money by the cost of feeding each animal, then an random event occurs:
-** an animal of a random type may die, an animal of a random type may have babies according to
-** the number of babies associated with that animal's class, the player is rewarded with an
-** added random bonus for the day based on the number of tigers in the zoo, or nothing occurs
-** that day. Finally, the player's money is increased by the payoff associated with each animal
-** in the zoo according to its type. The player is given the opportunity to purchase an adult
-** animal, or skip their turn by not making a purchase. A long as the player's money is greater
-** than 0 and the player has selected to continue the game at the end of a turn, the game
-** continues. If the player runs out of money or quits the game, the program ends.
+** Description: This information system adds unique pointers to a Student object, an Instructor
+** object and a Building object to vector of unique pointers to Person objects and Building
+** objects in a University object via addPerson and addBuilding functions. A menu is then
+** displayed, allowing the user to choose between displaying all added buildings, all added
+** students and instructors, selecting one of the people to perform work, or quitting the
+** information system. If the user chooses to select someone to perform work, a menu with
+** names of the current objects in the information system are displayed. The user then selects
+** a name, and a virtual function displays a message regarding the type of work the person
+** completes according to the derived class of the object.
 ***********************************************************************************************/
 
 #include <iostream>
@@ -64,19 +61,9 @@ int main() {
     case 3 : OSU.pickWorker();
              break;
     default : {}
-    
+
   }
 
   return 0;
 
 }
-
-/*void addPeopleToMenu(University &uni, Menu &menu) {
-  std::cout << "size: " << uni.people.size() << std::endl;
-  for (unsigned int i = 0; i < uni.people.size(); i++) {
-    std::cout << uni.people[i]->getName() << std::endl;
-    menu.addMenuItem(uni.people[i]->getName());
-
-  }
-
-}*/
